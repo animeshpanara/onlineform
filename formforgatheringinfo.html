@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+<title>Form__Submission</title>
+
+<script type="text/javascript" src="javascript.js"></script>
+
+<link rel="stylesheet" type="text/css" href="test.css">
+</head>
+
+
+<body>
+
+    <form name="tablegen" method="post" action="datacollection.php">
+    <label>Rows: <input type="text" name="rows" id="rows"/></label><br />
+    <label>Cols: <input type="text" name="cols" id="cols"/></label><br/>
+    <div id="wrapper">
+    	<input type="text" name="rows1" id="rows"/></label><br />
+    </div>
+    <input name="generate" type="button" value="Create Table!" onclick='create_table();'/>
+    <input type="submit" name="submit">
+    </form>
+    <input name="submit" type="button" value="Submit!" onclick='getvalues();'/>
+    
+    <div id="wrapper2"></div>
+</body>
+
+</html>
