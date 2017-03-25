@@ -5,4 +5,14 @@
 .table
 {
 	border: 1;
+<<<<<<< HEAD
+=======
+	background-color: red;
+}
+.span{
+	float: right;
+}
+#0,0{
+ background-color: red;
+>>>>>>> refs/remotes/origin/master
 }

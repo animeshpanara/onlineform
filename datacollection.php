@@ -3,10 +3,20 @@ function save_values_to_db($row,$column,$conn)
 {
 	
 	for ($i=0; $i<$row ; $i++) { 
+<<<<<<< HEAD
 		for ($j=0; $j<$column ; $j++) {	
 			$val[$i][$j]=$_POST["$i,$j"];
 			}
 			$fid=$val[$i][0];
+=======
+		for ($j=1; $j<$column ; $j++) {
+				if(isset($_POST["$i,$j"]))	
+					$val[$i][$j]=$_POST["$i,$j"];
+				else
+					$val[$i][$j]=0;
+			}
+			$fid=$i+1;
+>>>>>>> refs/remotes/origin/master
 			$name=$val[$i][1];
 			$age=$val[$i][2];
 			$bloodgroup=$val[$i][3];
@@ -33,6 +43,10 @@ if ($conn->connect_error) {
 
 echo "Connected successfully";
 
+<<<<<<< HEAD
 save_values_to_db($_POST['rows'],$_POST['cols'],$conn);
+=======
+save_values_to_db($_POST['rows'],9,$conn);
+>>>>>>> refs/remotes/origin/master
 
 ?>

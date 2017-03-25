@@ -9,6 +9,7 @@
 
 
 <body>
+<<<<<<< HEAD
 
     <form name="tablegen" method="post" action="datacollection.php">
     <label>Rows: <input type="text" name="rows" id="rows"/></label><br />
@@ -22,6 +23,20 @@
     <input name="submit" type="button" value="Submit!" onclick='getvalues();'/>
     
     <div id="wrapper2"></div>
+=======
+<div>
+    <form name="tablegen" method="post" action="datacollection.php">
+    <label>Enter the no of family no: <input type="text" name="rows" id="rows"/></label>
+    <input name="generate" type="button" id="ctbutton" value="Create Table!" onclick='create_table();'/>
+    <br>
+    <div id="wrapper">
+    <table name="table" id="table"></table>
+    </div>
+    <input type="submit" name="submit">
+    </form>
+    <div id="wrapper2"></div>
+</div>
+>>>>>>> refs/remotes/origin/master
 </body>
 
 </html>
