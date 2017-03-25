@@ -1,0 +1,15 @@
+*{
+	text-align: center;
+	box-sizing: border-box;
+}
+.table
+{
+	border: 1;
+	background-color: red;
+}
+.span{
+	float: right;
+}
+#0,0{
+ background-color: red;
+}
