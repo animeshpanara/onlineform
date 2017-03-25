@@ -71,14 +71,14 @@ function create_element(i,j)
             y=document.createElement('select');
             y.name=i+','+j;
             y.id=i+','+j;
-            y.appendChild(new Option("A+ve",""));
-            y.appendChild(new Option("AB+ve",""));
-            y.appendChild(new Option("B+ve",""));
-            y.appendChild(new Option("O+ve",""));
-            y.appendChild(new Option("A-ve",""));
-            y.appendChild(new Option("AB-ve",""));
-            y.appendChild(new Option("B-ve",""));
-            y.appendChild(new Option("O-ve",""));
+            y.appendChild(new Option("A+ve","A+ve"));
+            y.appendChild(new Option("AB+ve","AB+ve"));
+            y.appendChild(new Option("B+ve","B+ve"));
+            y.appendChild(new Option("O+ve","O+ve"));
+            y.appendChild(new Option("A-ve","A-ve"));
+            y.appendChild(new Option("AB-ve","AB-ve"));
+            y.appendChild(new Option("B-ve","B-ve"));
+            y.appendChild(new Option("O-ve","O-ve"));
             y.style.width=cellwidths[j];
             break;
         case 4:
@@ -88,6 +88,8 @@ function create_element(i,j)
             x=document.createElement('input');
             x.name=i+','+j;
             x.type='radio';
+            x.checked=true;
+            x.value='M';
             x.id=i+','+j+','+0;
             y.appendChild(x);
             y.appendChild(txt1);
@@ -96,6 +98,7 @@ function create_element(i,j)
             x.name=i+','+j;
             x.type='radio';
             x.id=i+','+j+','+1;
+            x.value='F';
             y.appendChild(x);
             y.appendChild(txt2);       
             y.style.width=cellwidths[j];
@@ -105,6 +108,7 @@ function create_element(i,j)
             y.type='checkbox';
             y.name=i+','+j;
             y.id=i+','+j;
+            y.value=1;
             y.style.width=cellwidths[j];
             break;
         case 6:
