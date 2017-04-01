@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<title>Form__Submission</title>
+
+<script type="text/javascript" src="javascript.js"></script>
+<link rel="stylesheet" type="text/css" href="test.css">
+
+</head>
+
+
+<body>
+<div>
+    <form name="tablegen" method="post" action="datacollection.php">
+    <label>Enter the no of family no: <input type="text" name="rows" id="rows"/></label>
+    <input name="generate" type="button" id="ctbutton" value="Create Table!" onclick='create_table();'/>
+    <br>
+    <div id="wrapper">
+    <table name="table" id="table"></table>
+    </div>
+    <input type="submit" name="submit">
+    </form>
+    <div id="wrapper2"></div>
+</div>
+</body>
+
+</html>
