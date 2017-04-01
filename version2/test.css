@@ -8,7 +8,7 @@ table
     margin-left: auto;
     margin-right: auto;
 	border: 8 bold;
-	float: center;
+	//float: center;
 	//background-color: red;
 }
 tr{
@@ -16,7 +16,6 @@ tr{
 }
 th,td{
 	padding: auto;
-	font-size: 26px;
 	border: 0;
 	width: auto;
 	height: auto;
@@ -30,35 +29,35 @@ input{
 .Name{
 	font-size: 20px;
 	height: auto;
-	background-color: #f1f1f1;
+	//background-color: red;
 	width: auto;
-	border-radius:5px;
-	border: 1px solid #c2c2a3; 
 }
 .Address{
 	font-size: 20px;
 	height: auto;
-	width:100%;
+	width:200px;
 }
 .Occupation{
 	font-size: 20px;
 	height: auto;
-	width:100%;
+	width:200px;
 }
 .Education{
 	font-size: 20px;
 	height: auto;
-	width:100%;
+	width:200px;
 }
 .rad{
-	
+	vertical-align: auto;
 	width: 1.25em;
     height: 1.25em;
+    align-self:center;
 }
 .Gender{
-	font-size: 20px;
+	text-align: left;
+	font-size: 18px;
 	height: auto;
-	width: auto;
+	float: left;
 }
 .Checkboxes{
 	//font-size: 20px;
@@ -72,8 +71,31 @@ input{
 	height: auto;
 	width: auto;
 }
-.Age{
+.datepicker{
+	font-size: 17px;
+	height: auto;
+	width: auto;
+}
+.phonenumber{
 	font-size: 20px;
 	height: auto;
 	width: auto;
 }
+.OccupationalAddress{
+	font-size: 20px;
+	height: auto;
+	width: 200px;
+}
+.MaternalSurname{
+	font-size: 20px;
+	height: auto;
+	width: 200px;
+}
+.relation{
+	font-size: 22px;
+	height: auto;
+	width: auto;
+}
+date{
+
+ /* {} is the value according to your need */}

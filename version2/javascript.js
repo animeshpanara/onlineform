@@ -1,12 +1,14 @@
+
 function create_table()
 {
     document.getElementById('ctbutton').disabled=true;
     var num_rows = document.getElementById('rows').value;
-    num_cols=9;
+    num_cols=13;
     var table=document.getElementById('table');
     var x = document.getElementById('wrapper');
     x.appendChild(populateTable(table, num_rows, num_cols, "text"));
 }
+
 function populateTable(table, rows, cells, content) 
 {
     if (!table) table = document.createElement('table');
@@ -29,13 +31,14 @@ return table;
 function tableHeaders(table, rows, cells, content)
 {   
     //cellwidths=["20px","150px","30px","60px","100px","20px","150px","150px","150px"];
-    tableheads=["SrNo","Name","Age","Bg","Gender","Married","Education","Occupation","Res.Address"];
+    cellwidths=["auto","auto","auto","auto","auto","200px","auto","auto","auto","auto","auto","auto","auto"];
+    tableheads=["SrNo","Name","DOB","Relation with head of family","Bg","Gender","Married","Education","Occupation","Occupational Address","MaternalSurname & village","PhoneNumber","Res.Address"];
     var row = document.createElement('tr');
         for (var j = 0; j < cells; ++j) {
             cell=document.createElement('th');
             x=document.createTextNode(tableheads[j]);
             cell.appendChild(x);
-             cell.style.width="auto";
+             cell.style.width=cellwidths[j];
             row.appendChild(cell);
         }
         table.appendChild(row);
@@ -63,17 +66,25 @@ function create_element(i,j)
             //y.style.width=cellwidths[j];
             break;
         case 2:
+            
             y=document.createElement('input');
             y.name=i+','+j;
             y.id=i+','+j;
-            y.type="number";
-            y.required=true;
-            y.min=1;
-            y.max=100;
-            y.className='Age';
+            y.type="date";
+            y.className='datepicker';
             //y.style.width=cellwidths[j];
             break;
         case 3:
+    		y=document.createElement('select');
+            y.name=i+','+j;
+            y.id=i+','+j;
+            y.className='relation';
+            options=["wife","husband","Self","Daughter","Son","Father","Mother","Brother","Sister"];
+            for (var i =0; i< options.length; i++) {
+                y.appendChild(new Option(options[i],options[i]));
+            }
+    		break;
+        case 4:
             y=document.createElement('select');
             y.name=i+','+j;
             y.id=i+','+j;
@@ -82,19 +93,12 @@ function create_element(i,j)
             for (var i =0; i< options.length; i++) {
                 y.appendChild(new Option(options[i],options[i]));
             }
-           // y.appendChild(new Option("A+ve","A+ve"));
-           // y.appendChild(new Option("AB+ve","AB+ve"));
-           // y.appendChild(new Option("B+ve","B+ve"));
-           // y.appendChild(new Option("O+ve","O+ve"));
-           // y.appendChild(new Option("A-ve","A-ve"));
-           // y.appendChild(new Option("AB-ve","AB-ve"));
-           // y.appendChild(new Option("B-ve","B-ve"));
-           // y.appendChild(new Option("O-ve","O-ve"));
-            //y.style.width=cellwidths[j];
+			//y.style.width=cellwidths[j];
             break;
-        case 4:
+        case 5:
             y=document.createElement('span');
             y.className="span";
+            br=document.createElement('br');
             txt1=document.createTextNode('M');
             x=document.createElement('input');
             x.name=i+','+j;
@@ -105,6 +109,7 @@ function create_element(i,j)
             x.className='rad';
             y.appendChild(x);
             y.appendChild(txt1);
+            y.appendChild(br);
             txt2=document.createTextNode('F');
             x=document.createElement('input');
             x.name=i+','+j;
@@ -114,10 +119,11 @@ function create_element(i,j)
             x.className='rad';
             y.appendChild(x);
             y.appendChild(txt2);
+           // y.appendChild(br);
             y.className='Gender'       
             //y.style.width=cellwidths[j];
             break;
-        case 5:
+        case 6:
             y=document.createElement('input');
             y.type='checkbox';
             y.name=i+','+j;
@@ -126,7 +132,7 @@ function create_element(i,j)
             y.value=1;
             //y.style.width=cellwidths[j];
             break;
-        case 6:
+        case 7:
             y=document.createElement('input');
             y.name=i+','+j;
             y.id=i+','+j;
@@ -135,7 +141,7 @@ function create_element(i,j)
             y.required=true;
             //y.style.width=cellwidths[j];
             break;
-        case 7:
+        case 8:
             y=document.createElement('input');
             y.name=i+','+j;
             y.id=i+','+j;
@@ -144,7 +150,35 @@ function create_element(i,j)
             y.required=true;
             //y.style.width=cellwidths[j];
             break;
-        case 8:
+        case 9:
+    		y=document.createElement('input');
+            y.name=i+','+j;
+            y.id=i+','+j;
+            y.className="OccupationalAddress";
+            y.type="text";
+            y.required=true;
+    		break;  
+    	case 10:
+    		y=document.createElement('input');
+            y.name=i+','+j;
+            y.id=i+','+j;
+            y.className="MaternalSurname";
+            y.type="text";
+            y.required=true;
+    		break;
+    	 case 11:
+            y=document.createElement('input');
+            y.name=i+','+j;
+            y.id=i+','+j;
+            y.className="phonenumber";
+            y.type="number";
+            y.length=10;
+            y.min=1000000000;
+            y.max=9999999999;
+            y.required=true;
+            //y.style.width=cellwidths[j];
+            break;
+        case 12:
             y=document.createElement('input');
             y.name=i+','+j;
             y.id=i+','+j;
@@ -153,6 +187,8 @@ function create_element(i,j)
             y.required=true;
             //y.style.width=cellwidths[j];
             break;    
+    	
+    			
     }
     return y;
 }
